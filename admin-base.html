@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Mobile Repair</title>
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="/assets/css/admin.css">
+
+    <!-- Font Awesome 6.4.0 for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="#">MediatekFix</a>
+        </div>
+        <div class="navbar-menu">
+            <ul>
+                <!-- Toggle Button for Mobile -->
+                <li class="navbar-toggle">
+                    <a href="javascript:void(0);" id="toggleSidebar" aria-label="Toggle Sidebar" aria-expanded="false">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+                <!-- Other Navbar Items -->
+                <li><a href="#"><i class="fas fa-bell"></i></a></li>
+                <li><a href="#"><i class="fas fa-user-circle"></i></a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i><span
+                        class="sidebar-text">Dashboard</span></a></li>
+            <li><a href="#"><i class="fas fa-tools"></i><span class="sidebar-text">Repairs</span></a></li>
+            <li><a href="#"><i class="fas fa-users"></i><span class="sidebar-text">Users</span></a></li>
+            <li><a href="#"><i class="fas fa-cog"></i><span class="sidebar-text">Settings</span></a></li>
+            <li><a href="#"><i class="fas fa-message"></i><span class="sidebar-text">Messages</span></a></li>
+            <li><a href="#"><i class="fas fa-power-off"></i><span class="sidebar-text">Logout</span></a></li>
+
+        </ul>
+    </aside>
+
+    <!-- Overlay for Mobile Sidebar -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- dashboard -->
+        <div class="dashboard">
+            <div class="dashboard-header">
+                <h2>Dashboard</h2>
+            </div>
+            
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Total Orders</h3>
+                    <p>3,000</p>
+                </div>
+                <div class="card">
+                    <h3>Total Repairs</h3>
+                    <p>150</p>
+                </div>
+                <div class="card">
+                    <h3>Pending Repairs</h3>
+                    <p>30</p>
+                </div>
+                <div class="card">
+                    <h3>Completed Repairs</h3>
+                    <p>120</p>
+                </div>
+                <div class="card">
+                    <h3>Total Revenue</h3>
+                    <p>₹5,000</p>
+                </div>  
+            </div>
+        
+            <div class="charts">
+                <div class="chart-container">
+                    <h3>Repairs Over Time</h3>
+                    <canvas id="repairsChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Revenue Over Time</h3>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- Link to your JavaScript file -->
+    <script src="/assets/js/admin.js"></script>
+</body>
+
+</html>

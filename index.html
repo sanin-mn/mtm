@@ -45,9 +45,16 @@
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#features">Products</a></li>
-          <li><a href="#team">Offers</a></li>
-          <li><a href="/complaints.html">Register Issue</a></li>
+          <li class="dropdown"><a href="#"><span>Book a service</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="/doorstep.html">Door step repairing</a></li>
+              <li><a href="/pickanddrop.html">Pickup and drop</a></li>
+              <li><a href="/scrapsale.html">Sell my old gadgets</a></li>
+
+            </ul>
+          </li>
+          <li><a href="/admin-base.html">admin</a></li>
+
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -66,6 +73,8 @@
             </ul>
           </li> -->
           <li><a href="#contact">Contact</a></li>
+          <li><a href="/auth.html">signin</a></li>
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -86,14 +95,15 @@
           </div>
 
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-in">
-            <h1>Fast & Reliable Mobile Repair Services</h1>
-            <p>Facing issues with your mobile device? Register your problem now and get it fixed by our expert
-              technicians.</p>
+            <h1 id="hero-title">Fast & Reliable Mobile Repair Services</h1>
+            <p id="hero-description">Facing issues with your mobile device? Register your problem now and get it fixed
+              by our expert technicians.</p>
             <div class="d-flex">
-              <a href="/complaints.html" class="btn-get-started">Register Your Issue</a>
-              <a href="https://www.youtube.com/watch?v=sfA6oBARefM"
-                class="glightbox btn-watch-video d-flex align-items-center">
-                <i class="bi bi-play-circle"></i><span>Watch How It Works</span>
+              <a href="#features" class="btn-get-started">Book Our Service</a>
+              <a href="trackstatus.html"
+                class="glightbox btn-watch-video d-flex align-items-center border py-1 px-2 rounded">
+                <i class="bi bi-search fs-6 text-light"></i>
+                <span>Track Status</span>
               </a>
             </div>
           </div>
@@ -101,7 +111,7 @@
       </div>
 
       <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28 " preserveAspectRatio="none">
+        viewBox="0 24 150 28" preserveAspectRatio="none">
         <defs>
           <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
         </defs>
@@ -116,7 +126,88 @@
         </g>
       </svg>
     </section>
+    <script>
+      const titles = [
+        "Fast & Reliable Mobile Repair Services",
+        "Affordable and Quick Solutions for Your Device",
+        "Expert Technicians Ready to Assist You",
+        "Your Mobile Device is in Safe Hands"
+      ];
+    
+      const descriptions = [
+        "Facing issues with your mobile device? Register your problem now and get it fixed by our expert technicians.",
+        "Our technicians are trained to handle a wide range of mobile issues efficiently.",
+        "We ensure quick and reliable service to minimize your downtime.",
+        "Contact us for a hassle-free repair experience, right at your doorstep."
+      ];
+    
+      let currentIndex = 0;
+    
+      function changeText() {
+        currentIndex = (currentIndex + 1) % titles.length; // Cycle through the indices
+        document.getElementById('hero-title').textContent = titles[currentIndex];
+        document.getElementById('hero-description').textContent = descriptions[currentIndex];
+      }
+    
+      setInterval(changeText, 3000); // Change text every 3 seconds
+    </script>
+    
     <!-- /Hero Section -->
+
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <div class="container">
+
+        <!-- Section Heading (Left-aligned) -->
+        <div class="section-title">
+          <h2>Our Feature</h2>
+          <p>We provide a range of Features to meet your repair and maintenance needs</p>
+        </div>
+
+        <div class="row gy-4">
+
+          <!-- Feature Item 1 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="features-item animated-box">
+              <h3>Door Step Repairing</h3>
+              <p>We bring expert repair services right to your doorstep.</p>
+              <a href="/doorstep.html" class="btn  fw-bold">
+                <i class="bi bi-house-door fw-bold"></i> Get Started
+              </a>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <!-- Feature Item 2 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="features-item animated-box">
+              <h3>Sell Your Scrap Gadget</h3>
+              <p>Turn your old gadgets into cash with our easy service.</p>
+              <a href="scrapsale.html" class="btn fw-bold">
+                <i class="bi bi-phone fw-bold"></i> Get Started
+              </a>
+            </div>
+          </div><!-- End Feature Item -->
+
+          <!-- Feature Item 3 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="features-item animated-box">
+              <h3>Pick Up and Drop</h3>
+              <p>We collect your products for service and return them to your self.</p> <!-- Updated Description -->
+              <a href="pickanddrop.html" class="btn fw-bold">
+                <i class="bi bi-truck fw-bold"></i> Get Started
+              </a>
+            </div>
+          </div><!-- End Feature Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -175,75 +266,102 @@
 
     </section><!-- /About Section -->
 
-
-    <!-- Features Section -->
-    <section id="features" class="features section">
+    <!-- Services Section -->
+    <section id="services" class="services section">
 
       <div class="container">
+
+        <!-- Section Heading -->
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p>We provide a range of services to meet your repair and maintenance needs</p>
+        </div>
 
         <div class="row gy-4">
 
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="features-item">
+            <div class="services-item">
               <i class="bi bi-tools" style="color: #ffbb2c;"></i>
               <h3><a href="" class="stretched-link">Screen Replacement</a></h3>
             </div>
-          </div><!-- End Feature Item -->
+          </div><!-- End Service Item -->
 
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="features-item">
+            <div class="services-item">
               <i class="bi bi-battery-half" style="color: #5578ff;"></i>
               <h3><a href="" class="stretched-link">Battery Replacement</a></h3>
             </div>
-          </div><!-- End Feature Item -->
+          </div><!-- End Service Item -->
 
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="features-item">
+            <div class="services-item">
               <i class="bi bi-wifi" style="color: #e80368;"></i>
               <h3><a href="" class="stretched-link">Network Issues</a></h3>
             </div>
-          </div><!-- End Feature Item -->
+          </div><!-- End Service Item -->
 
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="features-item">
+            <div class="services-item">
               <i class="bi bi-water" style="color: #e361ff;"></i>
               <h3><a href="" class="stretched-link">Water Damage Repair</a></h3>
             </div>
-          </div><!-- End Feature Item -->
+          </div><!-- End Service Item -->
 
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
-            <div class="features-item">
+            <div class="services-item">
               <i class="bi bi-headphones" style="color: #47aeff;"></i>
               <h3><a href="" class="stretched-link">Audio Issues</a></h3>
             </div>
-          </div><!-- End Feature Item -->
+          </div><!-- End Service Item -->
 
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="features-item">
+            <div class="services-item">
               <i class="bi bi-usb" style="color: #ffa76e;"></i>
               <h3><a href="" class="stretched-link">Charging Port Repair</a></h3>
             </div>
-          </div><!-- End Feature Item -->
+          </div><!-- End Service Item -->
 
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
-            <div class="features-item">
+            <div class="services-item">
               <i class="bi bi-camera" style="color: #11dbcf;"></i>
               <h3><a href="" class="stretched-link">Camera Repair</a></h3>
             </div>
-          </div><!-- End Feature Item -->
+          </div><!-- End Service Item -->
 
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
-            <div class="features-item">
+            <div class="services-item">
               <i class="bi bi-shield-lock" style="color: #4233ff;"></i>
               <h3><a href="" class="stretched-link">Data Protection</a></h3>
             </div>
-          </div><!-- End Feature Item -->
+          </div><!-- End Service Item -->
 
         </div>
 
       </div>
 
-    </section><!-- /Features Section -->
+    </section><!-- /Services Section -->
+
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <div class="container">
+        <img src="assets/img/cta-bg.jpg" alt="Mobile Services Background Image">
+        <div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <a href="https://www.youtube.com/watch?v=sfA6oBARefM" class="glightbox play-btn"></a>
+              <h3>Experience Mobile Excellence</h3>
+              <p>Stay connected on the go! Explore our mobile services designed to enhance your experience and keep you
+                in touch with what matters most.</p>
+              <a class="cta-btn" href="/complaints.html">Get Our Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
 
 
     <!-- Stats Section -->
@@ -253,7 +371,7 @@
 
         <div class="row gy-4 align-items-center">
 
-          <div class="col-lg-5">
+          <div class="col-lg-5 d-flex align-items-center justify-content-center">
             <img src="assets/img/mob.jpeg" alt="" class="img-fluid">
           </div>
 
@@ -316,118 +434,7 @@
     </section><!-- /Stats Section -->
 
 
-    <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section dark-background">
 
-      <div class="container">
-        <img src="assets/img/cta-bg.jpg" alt="Mobile Services Background Image">
-        <div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-xl-10">
-            <div class="text-center">
-              <a href="https://www.youtube.com/watch?v=sfA6oBARefM" class="glightbox play-btn"></a>
-              <h3>Experience Mobile Excellence</h3>
-              <p>Stay connected on the go! Explore our mobile services designed to enhance your experience and keep you
-                in touch with what matters most.</p>
-              <a class="cta-btn" href="/complaints.html">Get Our Service</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section><!-- /Call To Action Section -->
-
-
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Our Services</h2>
-        <p>We offer a wide range of mobile repair services to meet all your needs</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-phone"></i>
-              </div>
-              <h3>Screen Replacement</h3>
-              <p>We offer quick and affordable screen replacements for all types of mobile devices.</p>
-              <a href="service-details.html" class="readmore stretched-link">Read more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-battery-half"></i>
-              </div>
-              <h3>Battery Replacement</h3>
-              <p>Get your phone’s battery replaced to extend its life and improve performance.</p>
-              <a href="service-details.html" class="readmore stretched-link">Read more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-gear"></i>
-              </div>
-              <h3>Software Repair</h3>
-              <p>We fix common software issues like boot loops, crashes, and operating system errors.</p>
-              <a href="service-details.html" class="readmore stretched-link">Read more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-usb-drive"></i>
-              </div>
-              <h3>Data Recovery</h3>
-              <p>Recover lost or deleted data from your mobile device, including photos, contacts, and more.</p>
-              <a href="service-details.html" class="readmore stretched-link">Read more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-wifi"></i>
-              </div>
-              <h3>Wi-Fi & Bluetooth Issues</h3>
-              <p>Fix connectivity issues with Wi-Fi or Bluetooth to keep your device running smoothly.</p>
-              <a href="service-details.html" class="readmore stretched-link">Read more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-water"></i>
-              </div>
-              <h3>Water Damage Repair</h3>
-              <p>Our experts can assess and repair devices damaged by water or other liquids.</p>
-              <a href="service-details.html" class="readmore stretched-link">Read more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -508,6 +515,7 @@
 
     </section><!-- /Contact Section -->
 
+
   </main>
 
   <footer id="footer" class="footer dark-background">
@@ -573,7 +581,7 @@
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Mediatekfix</strong> <span>All Rights Reserved</span>
       </p>
       <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">minimatix</a>
+        Designed by <a href="https://www.instagram.com/minimatix.in" target="_blank">minimatix</a>
       </div>
     </div>
 

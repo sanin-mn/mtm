@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Track Service Status</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* Centering the content */
+    .track-status {
+      min-height: 100vh; /* Minimum height to fill viewport */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center vertically */
+      align-items: center; /* Center horizontally */
+      text-align: center; /* Center text */
+    }
+
+    /* Input field styles */
+    .track-input {
+      max-width: 400px; /* Limit width for the input box */
+      width: 100%; /* Responsive width */
+    }
+
+    /* Button styles */
+    .btn-track {
+      margin-top: 20px; /* Space between input and button */
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Track Service Status Section -->
+  <section id="track-service" class="track-status">
+    <h2>Track Your Service Status</h2>
+    <p>Enter your tracking code below to check the status of your service.</p>
+
+    <form id="trackForm" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <input type="text" class="form-control track-input" id="trackingCode" placeholder="Enter your tracking code" required>
+        <div class="invalid-feedback">
+          Please enter a valid tracking code.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-dark btn-track">
+        <i class="bi bi-search me-2"></i> Track Status
+      </button>
+    </form>
+  </section>
+
+  <!-- Bootstrap JS and dependencies (Popper.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+    });
+  </script>
+</body>
+</html>

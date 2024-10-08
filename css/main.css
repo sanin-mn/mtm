@@ -81,11 +81,11 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(0, 0, 0, 0.736);
+  /* --background-color: #000000d9; */
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: black;
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -114,7 +114,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: #0000008b;
+  background-color: black;
 }
 
 /*--------------------------------------------------------------
@@ -1653,3 +1653,4 @@ label {
     padding: 20px; /* Adjust padding for smaller screens */
   }
 }
+
